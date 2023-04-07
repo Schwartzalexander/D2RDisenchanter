@@ -1,0 +1,76 @@
+{
+  "name": "Disenchanter",
+  "description": "Adds two cube recepies for disenchanting and upgrading items. Disenchanting converts any item to a non-magic version of it. This can be an ethereal or regular white item. Upgrading increases the quality to Exceptional or Elite. By default, you need one jewel or ring to convert an item, but you can change the required ingredient in the config.",
+  "author": "erSch",
+  "website": "",
+  "version": "1.0",
+  "config": [
+    {
+      "id": "itemUpgrade",
+      "type": "select",
+      "name": "Item to use to upgrade",
+      "description": "You can choose an item other than a jewel to use in the recipe instead.",
+      "defaultValue": "jewl",
+      "options": [
+        { "value": "jewl", "label": "Jewel" },
+        { "value": "rin", "label": "Ring" },
+        { "value": "amu", "label": "Amulet" },
+        { "value": "rvl", "label": "Full Rejuvenation Potion" },
+        { "value": "tsc", "label": "Scroll of Town Portal" },
+        { "value": "isc", "label": "Scroll of Identify" }
+      ]
+    },
+    {
+      "id": "quality",
+      "type": "select",
+      "name": "Upgrade Quality",
+      "description": "Basic (normal), exceptional (nightmare) ore elite (hell) item quality",
+      "defaultValue": "bas",
+      "options": [
+        { "value": "bas", "label": "Basic" },
+        { "value": "exc", "label": "Exceptional" },
+        { "value": "eli", "label": "Elite" }
+      ]
+    },
+    {
+      "id": "freeUpgrade",
+      "type": "checkbox",
+      "name": "Free Upgrade",
+      "description": "Does not consume the item, when upgrading.",
+      "defaultValue": false
+    },
+    {
+      "id": "itemDisenchant",
+      "type": "select",
+      "name": "Item to use to disenchant",
+      "description": "You can choose an item other than a jewel to use in the recipe instead.",
+      "defaultValue": "rin",
+      "options": [
+        { "value": "jewl", "label": "Jewel" },
+        { "value": "rin", "label": "Ring" },
+        { "value": "amu", "label": "Amulet" },
+        { "value": "rvl", "label": "Full Rejuvenation Potion" },
+        { "value": "tsc", "label": "Scroll of Town Portal" },
+        { "value": "isc", "label": "Scroll of Identify" }
+      ]
+    },
+    {
+      "id": "ethereal",
+      "type": "select",
+      "name": "Disenchant to Ethereal",
+      "description": "Should the disenchanted item be ethereal or not?",
+      "defaultValue": "noe",
+      "options": [
+        { "value": "noe", "label": "Non ethereal" },
+        { "value": "eth", "label": "Ethereal" }
+      ]
+    },
+    {
+      "id": "freeDisenchant",
+      "type": "checkbox",
+      "name": "Free Disenchant",
+      "description": "Does not consume the item, when disenchanting.",
+      "defaultValue": false
+    }
+  ]
+}
