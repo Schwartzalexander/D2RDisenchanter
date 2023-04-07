@@ -1,8 +1,8 @@
 {
   "name": "Disenchanter",
-  "description": "Adds two cube recepies for disenchanting and upgrading items. Disenchanting converts any item to a non-magic version of it. This can be an ethereal or regular white item. Upgrading increases the quality to Exceptional or Elite. By default, you need one jewel or ring to convert an item, but you can change the required ingredient in the config.",
+  "description": "Adds two cube recipes for disenchanting and upgrading items. Disenchanting converts any item to a non-magic version of it. This can be an ethereal or regular white item. Upgrading increases the quality to Exceptional or Elite. By default, you need one jewel or ring to convert an item, but you can change the required ingredient in the config.",
   "author": "erSch",
-  "website": "",
+  "website": "https://www.nexusmods.com/diablo2resurrected/mods/348",
   "version": "1.0",
   "config": [
     {
@@ -43,7 +43,7 @@
       "id": "itemDisenchant",
       "type": "select",
       "name": "Item to use to disenchant",
-      "description": "You can choose an item other than a jewel to use in the recipe instead.",
+      "description": "You can choose an item other than a ring to use in the recipe instead.",
       "defaultValue": "rin",
       "options": [
         { "value": "jewl", "label": "Jewel" },
