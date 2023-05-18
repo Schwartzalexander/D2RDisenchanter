@@ -1,9 +1,9 @@
 {
   "name": "Disenchanter",
-  "description": "Adds two cube recipes for disenchanting and upgrading items. Disenchanting converts any item to a non-magic version of it. This can be an ethereal or regular white item. Upgrading increases the quality to Exceptional or Elite. By default, you need one jewel or ring to convert an item, but you can change the required ingredient in the config.",
+  "description": "Adds cube recipes for disenchanting and upgrading items. Disenchanting converts any item to a non-magic version of it. This can be an ethereal or regular white item. Upgrading increases the quality to Exceptional or Elite. By default, you need one jewel or ring to convert an item, but you can change the required ingredient in the config.",
   "author": "erSch",
   "website": "https://www.nexusmods.com/diablo2resurrected/mods/348",
-  "version": "1.0",
+  "version": "1.1.0",
   "config": [
     {
       "id": "itemUpgrade",
@@ -40,9 +40,9 @@
       "defaultValue": false
     },
     {
-      "id": "itemDisenchant",
+      "id": "itemDisenchantNoe",
       "type": "select",
-      "name": "Item to use to disenchant",
+      "name": "Item to use to disenchant (non-ethereal)",
       "description": "You can choose an item other than a ring to use in the recipe instead.",
       "defaultValue": "rin",
       "options": [
@@ -51,25 +51,45 @@
         { "value": "amu", "label": "Amulet" },
         { "value": "rvl", "label": "Full Rejuvenation Potion" },
         { "value": "tsc", "label": "Scroll of Town Portal" },
-        { "value": "isc", "label": "Scroll of Identify" }
+        { "value": "isc", "label": "Scroll of Identify" },
+        { "value": "charm", "label": "Charm" }
       ]
     },
     {
-      "id": "ethereal",
+      "id": "itemDisenchantEth",
       "type": "select",
-      "name": "Disenchant to Ethereal",
-      "description": "Should the disenchanted item be ethereal or not?",
-      "defaultValue": "noe",
+      "name": "Item to use to disenchant (ethereal)",
+      "description": "You can choose an item other than a ring to use in the recipe instead.",
+      "defaultValue": "amu",
       "options": [
-        { "value": "noe", "label": "Non ethereal" },
-        { "value": "eth", "label": "Ethereal" }
+        { "value": "jewl", "label": "Jewel" },
+        { "value": "rin", "label": "Ring" },
+        { "value": "amu", "label": "Amulet" },
+        { "value": "rvl", "label": "Full Rejuvenation Potion" },
+        { "value": "tsc", "label": "Scroll of Town Portal" },
+        { "value": "isc", "label": "Scroll of Identify" },
+        { "value": "charm", "label": "Charm" }
       ]
     },
     {
       "id": "freeDisenchant",
       "type": "checkbox",
       "name": "Free Disenchant",
-      "description": "Does not consume the item, when disenchanting.",
+      "description": "If enabled, the recipe gives you another helper item (ring, amulet etc.) of the same type, when disenchanting. Does not work with charms.",
+      "defaultValue": false
+    },
+    {
+      "id": "copyJewelRecipeEnabled",
+      "type": "checkbox",
+      "name": "Enable recipe to copy jewels",
+      "description": "Enables the recipe to copy a jewel. Put it into the cube and transform to get another random jewel.",
+      "defaultValue": false
+    },
+    {
+      "id": "createJewelRecipeEnabled",
+      "type": "checkbox",
+      "name": "Enable recipe to create jewels",
+      "description": "Enables the recipe create a random jewel from a scroll of town portal.",
       "defaultValue": false
     }
   ]

@@ -18,20 +18,33 @@ if (config.freeUpgrade) {
   upgradeRecipe['output b'] = config.itemUpgrade;
 }
 
-const disenchantRecipe = {
+const disenchantRecipeNoe = {
   description: 'Disenchant',
   enabled: 1,
   version: 100,
   numinputs: 2,
   // input 1 defined below
-  'input 2': config.itemDisenchant,
-  output: `usetype,hiq,${config.ethereal},nos,reg`,
+  'input 2': config.itemDisenchantNoe,
+  output: `usetype,hiq,noe,nos,reg`,
+  ilvl: 1000,
+  '*eol': 0,
+};
+
+const disenchantRecipeEth = {
+  description: 'Disenchant',
+  enabled: 1,
+  version: 100,
+  numinputs: 2,
+  // input 1 defined below
+  'input 2': config.itemDisenchantEth,
+  output: `usetype,hiq,eth,nos,reg`,
   ilvl: 1000,
   '*eol': 0,
 };
 
 if (config.freeDisenchant) {
-  disenchantRecipe['output b'] = config.itemDisenchant;
+  disenchantRecipeNoe['output b'] = config.itemDisenchantNoe;
+  disenchantRecipeEth['output b'] = config.itemDisenchantEth;
 }
 
 cubemain.rows.push({
@@ -47,29 +60,44 @@ cubemain.rows.push({
 });
 
 cubemain.rows.push({
-  ...disenchantRecipe,
-  description: `${disenchantRecipe.description} armor`,
+  ...disenchantRecipeNoe,
+  description: `${disenchantRecipeNoe.description} armor`,
   'input 1': `"armo"`,
 });
 
 cubemain.rows.push({
-  ...disenchantRecipe,
-  description: `${disenchantRecipe.description} weapon`,
+  ...disenchantRecipeEth,
+  description: `${disenchantRecipeEth.description} armor`,
+  'input 1': `"armo"`,
+});
+
+cubemain.rows.push({
+  ...disenchantRecipeNoe,
+  description: `${disenchantRecipeNoe.description} weapon`,
   'input 1': `"weap"`,
 });
 
 cubemain.rows.push({
-  description: 'Copy juwel',
-  enabled: 1,
-  version: 100,
-  numinputs: 1,
-  'input 1': "jewl",
-  output: "useitem",
-  'output b': "jewl",
-  ilvl: 1000,
-  '*eol': 0,
+  ...disenchantRecipeEth,
+  description: `${disenchantRecipeEth.description} weapon`,
+  'input 1': `"weap"`,
 });
 
+if (config.copyJewelRecipeEnabled) {
+  cubemain.rows.push({
+    description: 'Copy juwel',
+    enabled: 1,
+    version: 100,
+    numinputs: 1,
+    'input 1': "jewl",
+    output: "useitem",
+    'output b': "jewl",
+    ilvl: 1000,
+    '*eol': 0,
+  });
+}
+
+if (config.createJewelRecipeEnabled) {
 cubemain.rows.push({
   description: 'Create juwel',
   enabled: 1,
@@ -81,5 +109,6 @@ cubemain.rows.push({
   ilvl: 1000,
   '*eol': 0,
 });
+}
 
 D2RMM.writeTsv(cubemainFilename, cubemain);
